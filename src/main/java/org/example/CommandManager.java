@@ -15,6 +15,8 @@ public class CommandManager {
     private final List<ICommand> commands = new ArrayList<>();
 
     public CommandManager() {
+        addCommand(new ShowTracksCommand());
+
         addCommand(new JoinCommand());
         addCommand(new NowPlayingCommand());
         addCommand(new PlayCommand());
