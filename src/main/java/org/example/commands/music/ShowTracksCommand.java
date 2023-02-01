@@ -6,16 +6,11 @@ import net.dv8tion.jda.api.entities.TextChannel;
 import org.example.commands.CommandContext;
 import org.example.commands.ICommand;
 import org.example.configs.StorageKeeper;
-import org.example.lavaplayer.PlayerManager;
 
-public class PlayLocalCommand implements ICommand {
+public class ShowTracksCommand implements ICommand {
+    @Override
     public void handle(CommandContext ctx) {
         final TextChannel channel = ctx.getChannel();
-
-        if (ctx.getArgs().isEmpty()) {
-            channel.sendMessage("Correct usage is `!!playlocal <track name>`").queue();
-            return;
-        }
 
         final Member self = ctx.getSelfMember();
         final GuildVoiceState selfVoiceState = self.getVoiceState();
@@ -38,28 +33,17 @@ public class PlayLocalCommand implements ICommand {
             return;
         }
 
-        String trackName = String.join(" ", ctx.getArgs()) + ".mp3";
-
-        if (!StorageKeeper.isInStorage(trackName)){
-            channel.sendMessage("No such track in storage! Type '!!show' to see all available tracks.").queue();
-            return;
-        }
-
-        trackName = "C:\\Users\\serega\\IdeaProjects\\KislotnyDJ\\src\\main\\resources\\" + trackName;
-
-        PlayerManager.getInstance().loadAndPlay(channel, trackName);
+        channel.sendMessageFormat("All available local tracks are: " + StorageKeeper.showAllAvailableTracks() + "\nTo play local track use '!!playlocal <track_name>'").queue();
     }
 
     @Override
     public String getName() {
-        return "playlocal";
+        return "show";
     }
 
     @Override
     public String getHelp() {
-        return "Plays a song from a local storage\n" +
-                "Usage: '!!playlocal <trackName>'";
+        return "Shows all available local tracks\n" +
+                "Usage: '!!show'";
     }
-
-
 }

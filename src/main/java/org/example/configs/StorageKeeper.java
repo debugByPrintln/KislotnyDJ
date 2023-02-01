@@ -24,7 +24,10 @@ public class StorageKeeper {
         StringBuilder res = new StringBuilder();
 
         for (int i = 0; i < fileList.size(); i++) {
-            String realFileName = fileList.get(i).getName().split("/")[0] + "; ";
+            String tmp = fileList.get(i).getName().split("/")[0];
+
+            String realFileName = tmp.substring(0, tmp.length()-4) + " / ";
+
             res.append(realFileName);
         }
 

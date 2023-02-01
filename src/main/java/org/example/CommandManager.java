@@ -16,7 +16,7 @@ public class CommandManager {
 
     public CommandManager() {
         addCommand(new ShowTracksCommand());
-
+        addCommand(new HelpControlCommand());
         addCommand(new JoinCommand());
         addCommand(new NowPlayingCommand());
         addCommand(new PlayCommand());
