@@ -52,11 +52,11 @@ public class Listener extends ListenerAdapter {
         }
 
         final long guildId = event.getGuild().getIdLong();
-        String prefix = Config.get("prefix");
+        String prefix = Config.getPrefix();
         String raw = event.getMessage().getContentRaw();
 
         if (raw.equalsIgnoreCase(prefix + "shutdown")
-                && user.getId().equals(Config.get("owner_id"))) {
+                && user.getId().equals(Config.getOwnerId())) {
             LOGGER.info("Shutting down");
             event.getJDA().shutdown();
             BotCommons.shutdown(event.getJDA());

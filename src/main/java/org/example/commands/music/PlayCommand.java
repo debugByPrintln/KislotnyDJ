@@ -17,7 +17,7 @@ public class PlayCommand implements ICommand {
         final TextChannel channel = ctx.getChannel();
 
         if (ctx.getArgs().isEmpty()) {
-            channel.sendMessage("Correct usage is `!!play <youtube link>`").queue();
+            channel.sendMessage("Correct usage is `!!ytplay <youtube link>`").queue();
             return;
         }
 
@@ -53,13 +53,13 @@ public class PlayCommand implements ICommand {
 
     @Override
     public String getName() {
-        return "play";
+        return "ytplay";
     }
 
     @Override
     public String getHelp() {
-        return "Plays a song\n" +
-                "Usage: `!!play <youtube link>`";
+        return "Plays a song from youtube\n" +
+                "Usage: `!!ytplay <youtube_link>`";
     }
 
     private boolean isUrl(String url) {

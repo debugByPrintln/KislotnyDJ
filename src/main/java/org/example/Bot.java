@@ -13,7 +13,7 @@ import java.util.EnumSet;
 public class Bot {
     private Bot() throws LoginException {
         JDABuilder.createDefault(
-                        Config.get("token"),
+                        Config.getToken(),
                         GatewayIntent.GUILD_MEMBERS,
                         GatewayIntent.GUILD_MESSAGES,
                         GatewayIntent.GUILD_VOICE_STATES
@@ -25,7 +25,7 @@ public class Bot {
                 ))
                 .enableCache(CacheFlag.VOICE_STATE)
                 .addEventListeners(new Listener())
-                .setActivity(Activity.watching("Joskoe porno"))
+                .setActivity(Activity.playing("Pomoyka 2"))
                 .build();
     }
 

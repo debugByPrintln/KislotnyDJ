@@ -26,7 +26,7 @@ public class StorageKeeper {
         for (int i = 0; i < fileList.size(); i++) {
             String tmp = fileList.get(i).getName().split("/")[0];
 
-            String realFileName = tmp.substring(0, tmp.length()-4) + " / ";
+            String realFileName = "\n ---> " + tmp.substring(0, tmp.length()-4);
 
             res.append(realFileName);
         }

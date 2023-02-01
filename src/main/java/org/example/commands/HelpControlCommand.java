@@ -13,7 +13,7 @@ public class HelpControlCommand implements ICommand {
 
         channel.sendMessage("All available commands:" +
                 "\n!!join - to join voice channel;" +
-                "\n!!play <youtube_link> - to queue track from youtube;" +
+                "\n!!ytplay <youtube_link> - to queue track from youtube;" +
                 "\n!!nowplaying - to see, what's playing rn;" +
                 "\n!!show - to see all available local tracks;" +
                 "\n!!playlocal <track_name> - to play track from local file (if file is present);" +
