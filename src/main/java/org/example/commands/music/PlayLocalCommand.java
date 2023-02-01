@@ -58,7 +58,7 @@ public class PlayLocalCommand implements ICommand {
     @Override
     public String getHelp() {
         return "Plays a song from a local storage\n" +
-                "Usage: '!!playlocal <trackName>'";
+                "Usage: '!!playlocal <track_name>'";
     }
 
 
