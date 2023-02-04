@@ -19,7 +19,7 @@ public class CommandManager {
         addCommand(new HelpControlCommand());
         addCommand(new JoinCommand());
         addCommand(new NowPlayingCommand());
-        addCommand(new PlayCommand());
+        addCommand(new YoutubePlayCommand());
         addCommand(new StopCommand());
         addCommand(new SkipCommand());
         addCommand(new QueueCommand());

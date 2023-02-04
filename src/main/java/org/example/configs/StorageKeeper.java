@@ -5,9 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class StorageKeeper {
-    private static final File dir = new File("src/main/resources");
-    private static final File[] arrFiles = dir.listFiles();
-    private static final List<File> fileList = Arrays.asList(arrFiles);
+    private static final List<File> fileList = Arrays.asList(new File("src/main/resources/music").listFiles());
+
     public static boolean isInStorage(String fileName){
         boolean res = false;
         for (int i = 0; i < fileList.size(); i++) {

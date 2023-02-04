@@ -10,7 +10,7 @@ import org.example.lavaplayer.PlayerManager;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-public class PlayCommand implements ICommand {
+public class YoutubePlayCommand implements ICommand {
     @SuppressWarnings("ConstantConditions")
     @Override
     public void handle(CommandContext ctx) {
@@ -45,7 +45,8 @@ public class PlayCommand implements ICommand {
         String link = String.join(" ", ctx.getArgs());
 
         if (!isUrl(link)) {
-            link = "ytsearch:" + link;
+            channel.sendMessage("Works only with youtube links.\nНЕ ВВОДИ ТЫ ЕБУЧЕЕ НАЗВАНИЕ ТРЕКА, ПИДАРАС, ТОЛЬКО ССЫЛКУ, У БОТА МОЗГИ С УМА СХОДЯТ!").queue();
+            return;
         }
 
         PlayerManager.getInstance().loadAndPlay(channel, link);
@@ -58,7 +59,7 @@ public class PlayCommand implements ICommand {
 
     @Override
     public String getHelp() {
-        return "Plays a song from youtube\n" +
+        return "Plays a song from youtube link\n" +
                 "Usage: `!!ytplay <youtube_link>`";
     }
 

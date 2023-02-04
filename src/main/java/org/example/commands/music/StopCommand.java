@@ -8,6 +8,8 @@ import org.example.commands.ICommand;
 import org.example.lavaplayer.GuildMusicManager;
 import org.example.lavaplayer.PlayerManager;
 
+import java.util.logging.Logger;
+
 public class StopCommand implements ICommand {
     @Override
     public void handle(CommandContext ctx) {

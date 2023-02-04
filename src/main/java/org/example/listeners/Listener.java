@@ -51,7 +51,6 @@ public class Listener extends ListenerAdapter {
             return;
         }
 
-        final long guildId = event.getGuild().getIdLong();
         String prefix = Config.getPrefix();
         String raw = event.getMessage().getContentRaw();
 
@@ -60,7 +59,6 @@ public class Listener extends ListenerAdapter {
             LOGGER.info("Shutting down");
             event.getJDA().shutdown();
             BotCommons.shutdown(event.getJDA());
-
             return;
         }
 
